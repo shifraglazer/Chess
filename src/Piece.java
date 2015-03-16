@@ -1,17 +1,20 @@
-public class Piece {
+import java.awt.Image;
+import java.util.Set;
 
+public class Piece {
 	private int x;
 	private int y;
 	private boolean alive;
 	private World world;
 	private PieceColor color;
+	private Image image;
 
 	public PieceColor getColor() {
 		return color;
 	}
 
 	public Piece(int x, int y, World world, PieceColor color) {
-		this.world=world;
+		this.world = world;
 		this.color = color;
 		this.x = x;
 		this.y = y;
@@ -49,11 +52,20 @@ public class Piece {
 	public PieceColor getOccupiedColor(int x, int y) {
 		if (world.squareOccupied(x, y)) {
 			return world.getOccupiedColor(x, y);
-		} else
-			return null;
+		}
+		return null;
 	}
 
-	public void removePiece(int x, int y) {
-		world.removePiece(x, y, this);
+	public Set<Square> evaluatePiece() {
+		// TODO see if Override works of if need instanceof
+		return null;
+	}
+
+	public Image getImage() {
+		return image;
+	}
+
+	public void setImage(Image image) {
+		this.image = image;
 	}
 }

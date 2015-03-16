@@ -1,27 +1,22 @@
+import java.awt.Color;
+
 import javax.swing.JButton;
 
 public class Square extends JButton {
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private int row;
 	private int col;
 	private boolean occupied;
-	private Piece peice;
+	private Piece piece;
+	private Color defaultColor;
+	private boolean hilighted;
 
-	public Square(int row, int col) {
+	public Square(int row, int col, Color color) {
 		this.row = row;
 		this.col = col;
-	}
-
-	public Piece getPeice() {
-		return peice;
-	}
-
-	public void setPeice(Piece peice) {
-		this.peice = peice;
+		defaultColor = color;
+		setBackground(color);
+		setForeground(color);
 	}
 
 	public int getRow() {
@@ -46,6 +41,40 @@ public class Square extends JButton {
 
 	public void setOccupied(boolean occupied) {
 		this.occupied = occupied;
+	}
+
+	public void turnRedToggle() {
+		setBackground(Color.PINK);
+		setForeground(Color.PINK);
+	}
+
+	public Piece removePiece() {
+		Piece old = piece;
+		piece = null;
+		return old;
+	}
+
+	public Piece getPiece() {
+		return piece;
+	}
+
+	public void setPiece(Piece piece) {
+		this.piece = piece;
+	}
+
+	public void highlight() {
+		setBackground(Color.BLUE);
+		setForeground(Color.BLUE);
+		hilighted = true;
+	}
+
+	public void unhighlight() {
+		setBackground(defaultColor);
+		hilighted = false;
+	}
+
+	public boolean isHighlighted() {
+		return hilighted;
 	}
 
 }

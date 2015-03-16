@@ -1,18 +1,17 @@
-import javax.swing.JFrame;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
-public class Chess extends JFrame{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private World world;
-	public Chess(){
-		world=new World();
-	}
+public class Chess {
 
 	public static void main(String[] args) {
-		Chess chess=new Chess();
-		chess.setVisible(true);
+		try {
+			UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+		}
+		catch (ClassNotFoundException | InstantiationException | IllegalAccessException
+				| UnsupportedLookAndFeelException e) {
+			e.printStackTrace();
+		}
+		new World().setVisible(true);
 	}
 
 }
