@@ -49,6 +49,9 @@ public class Piece {
 		return world.squareOccupied(x, y);
 	}
 
+	public Square getSquare(int x,int y){
+		return world.getSquare(x, y);
+	}
 	public PieceColor getOccupiedColor(int x, int y) {
 		if (world.squareOccupied(x, y)) {
 			return world.getOccupiedColor(x, y);

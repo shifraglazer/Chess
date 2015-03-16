@@ -16,6 +16,9 @@ public class World extends JFrame {
 		return board.squareOccupied(x, y);
 	}
 
+	public Square getSquare(int x,int y){
+		return board.square[x][y];
+	}
 	public PieceColor getOccupiedColor(int x, int y) {
 		// board.square[x][y].isOccupied();
 		if (board.squareOccupied(x, y)) {
