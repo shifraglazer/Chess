@@ -58,6 +58,9 @@ public class PieceBishop extends Piece {
 	}
 
 	public void move(int x, int y) {
+		if(isOccupied(x,y)){
+			removePiece(x,y);
+		}
 		this.setX(x);
 		this.setY(y);
 	}

@@ -39,7 +39,13 @@ public class Board extends JPanel {
 	public boolean squareOccupied(int x, int y) {
 		return square[x][y].isOccupied();
 	}
-	public PieceColor getOccupiedColor(int x,int y){
+
+	public PieceColor getOccupiedColor(int x, int y) {
 		return square[x][y].getPeice().getColor();
+	}
+
+	public void replacePiece(int x, int y, Piece piece) {
+		square[x][y].getPeice().setAlive(false);
+		square[x][y].setPeice(piece);
 	}
 }
