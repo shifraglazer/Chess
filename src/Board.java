@@ -5,6 +5,10 @@ import javax.swing.JPanel;
 
 public class Board extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private static final int SQUARES = 8;
 	protected Square[][] square;
 	private GridLayout grid;
@@ -29,8 +33,10 @@ public class Board extends JPanel {
 				count++;
 				if (count % 2 == 0) {
 					square[i][j].setBackground(Color.RED);
+					square[i][j].setForeground(Color.RED);
 				} else {
 					square[i][j].setBackground(Color.BLACK);
+					square[i][j].setForeground(Color.BLACK);
 				}
 			}
 		}

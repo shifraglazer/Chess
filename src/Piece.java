@@ -3,14 +3,15 @@ public class Piece {
 	private int x;
 	private int y;
 	private boolean alive;
-	private Board board;
+	private World world;
 	private PieceColor color;
 
 	public PieceColor getColor() {
 		return color;
 	}
 
-	public Piece(int x, int y, Board board, PieceColor color) {
+	public Piece(int x, int y, World world, PieceColor color) {
+		this.world=world;
 		this.color = color;
 		this.x = x;
 		this.y = y;
@@ -42,17 +43,17 @@ public class Piece {
 	}
 
 	public boolean isOccupied(int x, int y) {
-		return board.squareOccupied(x, y);
+		return world.squareOccupied(x, y);
 	}
 
 	public PieceColor getOccupiedColor(int x, int y) {
-		if (board.squareOccupied(x, y)) {
-			return board.getOccupiedColor(x, y);
+		if (world.squareOccupied(x, y)) {
+			return world.getOccupiedColor(x, y);
 		} else
 			return null;
 	}
 
 	public void removePiece(int x, int y) {
-		board.replacePiece(x, y, this);
+		world.removePiece(x, y, this);
 	}
 }

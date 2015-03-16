@@ -4,8 +4,8 @@ public class PieceBishop extends Piece {
 
 	private Image image;
 
-	public PieceBishop(int x, int y, Board board,PieceColor color) {
-		super(x, y,board,color);
+	public PieceBishop(int x, int y, World world,PieceColor color) {
+		super(x, y,world,color);
 
 	}
 

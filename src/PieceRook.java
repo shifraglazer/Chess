@@ -1,7 +1,7 @@
 public class PieceRook extends Piece {
 
-	public PieceRook(int x, int y, Board board, PieceColor color) {
-		super(x, y, board, color);
+	public PieceRook(int x, int y, World world, PieceColor color) {
+		super(x, y, world, color);
 
 	}
 
@@ -11,6 +11,9 @@ public class PieceRook extends Piece {
 
 		int diffx = Math.abs(getX() - currentX);
 		int diffy = Math.abs(getY() - currentY);
+		if (getOccupiedColor(x, y).equals(this.getColor())) {
+			return false;
+		}
 		if (diffx > 0) {
 			if (x > currentX) {
 				for (int i = 0; i < diffx; i++) {
@@ -41,12 +44,8 @@ public class PieceRook extends Piece {
 				}
 			}
 		}
-		if (getOccupiedColor(x, y).equals(this.getColor())) {
-			return false;
-		} else {
-			return true;
-		}
 
+		return true;
 	}
 
 }

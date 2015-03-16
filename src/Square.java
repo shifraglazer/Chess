@@ -2,6 +2,10 @@ import javax.swing.JButton;
 
 public class Square extends JButton {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int row;
 	private int col;
 	private boolean occupied;
