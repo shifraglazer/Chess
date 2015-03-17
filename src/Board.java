@@ -53,6 +53,10 @@ public class Board extends JPanel {
 		return square[x][y].getPiece().getColor();
 	}
 
+	public Square getSquare(int x, int y) {
+		return square[x][y];
+	}
+
 	public void move() {
 		Piece piece = from.removePiece();
 		to.setPiece(piece);

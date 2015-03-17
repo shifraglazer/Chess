@@ -77,4 +77,8 @@ public class Square extends JButton {
 		return hilighted;
 	}
 
+	public Color getColor() {
+		return defaultColor;
+	}
+
 }
